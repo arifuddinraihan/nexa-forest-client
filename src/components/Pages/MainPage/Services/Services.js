@@ -7,15 +7,16 @@ const Services = () => {
                 <div className='container mx-auto grid grid-cols-1 my-12'>
                     <div className='py-24'>
                         <div class="text-center">
-                            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">From the blog</h1>
-
+                            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
+                                ONLINE GARDEN CENTER
+                                <br></br>
+                                PLANTS DELIVERED TO YOUR DOOR</h1>
                             <p class="max-w-lg mx-auto mt-4 text-gray-500">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt, laudantium
-                                quia tempore delect
+                                Browse our online garden centre from the comfort of your home, knowing you'll be provided only the healthiest material and plants we have available. We offer a huge selection of locally grown trees, shrubs and perennials that we'll deliver to your door free of charge!
                             </p>
                         </div>
                     </div>
-                    <div className=''>
+                    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                             <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
                                 style={{

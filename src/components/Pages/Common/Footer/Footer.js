@@ -1,11 +1,15 @@
 import React from 'react';
 import { GiForest } from "react-icons/gi";
-
+import footerBg from "../../../assets/wave.svg"
 
 const Footer = () => {
     return (
-        <div className='p-4 bg-white sm:p-6 dark:bg-gray-900'>
-            <footer className="container mx-auto">
+        <div className='p-4 bg-white sm:p-6 dark:bg-gray-900' style={{backgroundImage : `url(${footerBg})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: "cover"}}>
+            <footer className="container mx-auto"
+            
+            >
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <div
