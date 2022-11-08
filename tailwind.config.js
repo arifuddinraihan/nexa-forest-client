@@ -1,40 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
-    },
-    colors: {
-      "primary": "#75d112",
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
 
-      "secondary": "#8eedb2",
+          "primary": "#5def34",
 
-      "accent": "#09ad03",
+          "secondary": "#22d3ee",
 
-      "neutral": "#1D2A35",
+          "accent": "#f472b6",
 
-      "base-100": "#E6E8EA",
+          "neutral": "#047857",
 
-      "info": "#81C6E4",
+          "base-100": "#f1f5f9",
 
-      "success": "#4FD88D",
+          "info": "#3b82f6",
 
-      "warning": "#F59B2E",
+          "success": "#2EC27D",
 
-      "error": "#ED313A",
-    },
-    fontFamily: {
-      'poorStory': 'Poor Story'
-    },
-    extend: {},
+          "warning": "#fde047",
+
+          "error": "#FC6F5F",
+        },
+      },
+    ],
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  plugins: [require("daisyui")],
 }
