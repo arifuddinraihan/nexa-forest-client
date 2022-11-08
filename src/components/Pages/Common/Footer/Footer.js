@@ -1,4 +1,6 @@
 import React from 'react';
+import { GiForest } from "react-icons/gi";
+
 
 const Footer = () => {
     return (
@@ -6,10 +8,16 @@ const Footer = () => {
             <footer className="container mx-auto">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
-                        <a href="https://flowbite.com/" className="flex items-center">
-                            <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-8" alt="FlowBite Logo" />
-                            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-                        </a>
+                        <div
+                            className="ml-3 transition-colors duration-300 transform text-teal-500 hover:text-slate-800 dark:text-success dark:hover:text-white">
+                            <div className='flex align-items-center gap-2 font-extrabold content-evenly items-center'>
+                                <GiForest className='text-5xl md:text-6xl '></GiForest>
+                                <p className='flex flex-col align-items-center md:text-2xl'>
+                                    <span className='text-2xl md:text-3xl pb-0'>Nexa</span>
+                                    <span className='pt-0 text-xl md:text-2xl'>Forest</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                         <div>

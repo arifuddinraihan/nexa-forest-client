@@ -11,7 +11,7 @@ import { EffectFade, Navigation, Pagination } from "swiper";
 
 const WorkGallery = () => {
     return (
-        <>
+        <div className='bg-white dark:bg-white'>
             <Swiper
                 className="xl:rounded-xl mySwiper my-4"
                 spaceBetween={30}
@@ -35,7 +35,7 @@ const WorkGallery = () => {
                     <img src="https://images.unsplash.com/photo-1516214104703-d870798883c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className='object-cover w-full h-96' />
                 </SwiperSlide>
             </Swiper>
-        </>
+        </div>
     );
 };
 
