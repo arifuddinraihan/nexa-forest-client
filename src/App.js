@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import router from './components/Routes/Routes';
 
 function App() {
   return (
     <div>
-      <h2>
-        This is the Flowbite base Nexa Forest
-      </h2>
+      <RouterProvider router={router}>
+
+      </RouterProvider>
     </div>
   );
 }
