@@ -2,19 +2,22 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ValidateContext } from '../../contexts/AuthProvider';
 
-const Review = () => {
-    const {user} = useContext(ValidateContext)
+const Review = ({ serviceInfo }) => {
+    const { _id } = serviceInfo
+    console.log(serviceInfo)
+    const { user } = useContext(ValidateContext)
     return (
         <section className="bg-white dark:bg-gray-900">
             <div className='container mx-auto'>
                 <div className='flex flex-col mx-4'>
                     <div className='flex flex-col md:flex-row justify-between text-start gap-4'>
                         <h1 className="text-xl md:text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
-                            What our <span className="text-blue-500">customers</span> <br className='hidden md:block'/> are saying
+                            What our <span className="text-blue-500">customers</span> <br className='hidden md:block' /> are saying
                         </h1>
                         {
                             user ? <>
-                                <Link to={'/write-reviews'} className='btn btn-sm md:btn-lg btn-primary shadow-lg'>
+                                <Link to={`/write-reviews/${_id}`}
+                                    className='btn btn-sm md:btn-lg btn-primary shadow-lg'>
                                     Write A Review
                                 </Link>
                             </>

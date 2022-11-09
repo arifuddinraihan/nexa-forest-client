@@ -7,7 +7,8 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import useTitle from '../../../hooks/useTitle';
 
 const SingleService = () => {
-    const { description, img, price, rating, title, _id } = useLoaderData()
+    const serviceInfo = useLoaderData()
+    const { description, img, price, rating, title, _id } = serviceInfo;
     useTitle(`Service- ${title}`)
     // console.log(title)
     return (
@@ -49,7 +50,7 @@ const SingleService = () => {
                         </div>
                     </div>
                     <div className='py-4'>
-                        <Review></Review>
+                        <Review serviceInfo={serviceInfo}></Review>
                     </div>
                 </div>
             </div>
