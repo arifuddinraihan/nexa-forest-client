@@ -31,14 +31,14 @@ const Navbar = () => {
                 ?
                 <>
                     <li
-                        className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success font-semibold' : 'btn btn-sm md:btn-md btn-ghost text-center font-semibold'}
+                        className='btn btn-sm md:btn-md btn-ghost font-semibold'
                     >
                         {user.displayName}
                     </li>
 
                     <li
                         onClick={handleLogOut}
-                        className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success font-semibold' : 'btn btn-sm md:btn-md btn-ghost text-center font-semibold'}
+                        className='btn btn-sm md:btn-md btn-ghost font-semibold'
                     >
                         Logout
                     </li>
