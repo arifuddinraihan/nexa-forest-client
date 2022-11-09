@@ -29,7 +29,7 @@ const ReviewForm = () => {
             rating,
             reviewTime
         }
-        console.log(serviceReviewGiven)
+        // console.log(serviceReviewGiven)
 
         fetch(`http://localhost:5000/reviews`, {
             method: "POST",
@@ -40,7 +40,7 @@ const ReviewForm = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.acknowledged) {
                     form.reset()
                     toast.success('your Review has added!', {
@@ -86,7 +86,7 @@ const ReviewForm = () => {
                                     <h2 className='font-bold dark:text-emerald-600 mb-3'>Rating given: {rating}</h2>
                                     <select onChange={event => setRating(event.target.value)}
                                     className="select select-primary font-semibold dark:text-gray-800 max-w-xs">
-                                        <option disabled>1</option>
+                                        <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
@@ -96,7 +96,7 @@ const ReviewForm = () => {
                                 <div className='flex flex-col container mx-auto'>
                                     <label className="text-gray-700 dark:text-gray-200" htmlFor="messageConfirmation">Write Your Review</label>
                                     <textarea name="message" id="messageConfirmation" type="text"
-                                        className="textarea px-4 py-2 mt-2 text-gray-700 bg-white border border-slate-900 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" placeholder="Your Message" required />
+                                        className="textarea px-4 py-2 mt-2 text-gray-700 bg-white border border-slate-900 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring text-md md:text-lg md:text:" placeholder="Your Message" required />
                                 </div>
                             </div>
 

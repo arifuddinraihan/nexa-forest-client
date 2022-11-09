@@ -20,7 +20,7 @@ const Login = () => {
         loginProvider(googleProvider)
             .then(res => {
                 const user = res.user
-                console.log(user)
+                // console.log(user)
                 navigate(from, { replace: true })
                 toast.success('Successfully Logged in!', {
                     position: "top-right",
@@ -34,6 +34,34 @@ const Login = () => {
                 });
             })
             .catch(e => console.error(e))
+    }
+
+    const handleLoginUser = event => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email?.value;
+        const password = form.password?.value;
+        signIn(email, password)
+        .then(res => {
+            const user = res.user
+            console.log(user)
+            navigate(from, { replace: true })
+            toast.success('Successfully Logged in!', {
+                position: "top-right",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            setError(errorMessage)
+            // ..
+          });
     }
 
 
@@ -75,7 +103,8 @@ const Login = () => {
                                 <p className="px-3 dark:text-gray-400">OR</p>
                                 <hr className="w-full dark:text-gray-400" />
                             </div>
-                            <form noValidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+                            <form onSubmit={handleLoginUser}
+                            noValidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
                                 <div className="space-y-4">
                                     <div className="space-y-2">
                                         <label htmlFor="email" className="block text-sm">Email address</label>
@@ -84,12 +113,13 @@ const Login = () => {
                                     <div className="space-y-2">
                                         <div className="flex justify-between">
                                             <label htmlFor="password" className="text-sm">Password</label>
-                                            <a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">Forgot password?</a>
+                                            <a href="#" className="text-xs hover:underline dark:text-gray-400">Forgot password?</a>
                                         </div>
                                         <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-emerald-600" />
                                     </div>
                                 </div>
-                                <button type="button" className="btn w-full px-8 py-3 font-semibold rounded-md bg-teal-500 text-slate-800 dark:bg-primary dark:text-gray-900 hover:bg-emerald-500 border-primary focus:border-secondary">Sign in</button>
+                                <p className='text-error font-medium text-md md:text=lg'> {error ? error : <></>} </p>
+                                <input type="Submit" className="btn w-full px-8 py-3 font-semibold rounded-md bg-teal-500 text-slate-800 dark:bg-primary dark:text-gray-900 hover:bg-emerald-500 border-primary focus:border-secondary"></input>
                             </form>
                         </div>
                     </div>

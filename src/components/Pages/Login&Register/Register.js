@@ -9,7 +9,7 @@ import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
     useTitle("Sign Up")
-    const { makeNewUser } = useContext(ValidateContext)
+    const { makeNewUser, updateUserProfile } = useContext(ValidateContext)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -17,13 +17,15 @@ const Register = () => {
         const firstname = form.firstName?.value;
         const lastname = form.lastName?.value;
         const fullName = `${firstname} ${lastname}`
+        const photo = form.photoURL?.value;
         const telephone = form.phone?.value;
         const email = form.email?.value;
         const password = form.password?.value;
-        console.log("event btn working", email, password, fullName, telephone)
+        // console.log("event btn working", email, password, fullName, telephone)
         makeNewUser(email, password)
             .then(result => {
                 const user = result.user;
+                updateUserProfile(fullName, photo)
                 form.reset();
                 toast.success('You have registered successfully', {
                     position: "top-right",
@@ -35,6 +37,7 @@ const Register = () => {
                     progress: undefined,
                     theme: "light",
                 });
+                // console.log(user)
             })
             .catch(err => console.error(err))
     }
