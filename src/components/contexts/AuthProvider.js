@@ -10,12 +10,12 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const providerLogin = (provider) => {
+    const loginProvider = (provider) => {
         setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
-    const createUser = (email, password) => {
+    const makeNewUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -48,9 +48,9 @@ const AuthProvider = ({ children }) => {
         user,
         loading,
         setLoading,
-        providerLogin,
+        loginProvider,
         logOut,
-        createUser,
+        makeNewUser,
         signIn
     }
 
