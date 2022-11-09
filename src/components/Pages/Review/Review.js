@@ -7,7 +7,7 @@ const Review = () => {
                 <div className='flex flex-col'>
                     <div className='text-start'>
                         <h1 className="text-xl md:text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
-                            What our <span class="text-blue-500">customers</span> <br/> are saying
+                            What our <span className="text-blue-500">customers</span> <br/> are saying
                         </h1>
                     </div>
                     <div className="mt-10 lg:mt-20">
