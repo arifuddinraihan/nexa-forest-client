@@ -1,5 +1,5 @@
 import { Player } from '@lottiefiles/react-lottie-player';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ValidateContext } from '../../contexts/AuthProvider';
 import { toast } from 'react-toastify';
@@ -10,7 +10,7 @@ import useTitle from '../../../hooks/useTitle';
 const Register = () => {
     useTitle("Sign Up")
     const { makeNewUser, updateUserProfile } = useContext(ValidateContext)
-
+    const [error, setError] = useState('')
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -39,7 +39,11 @@ const Register = () => {
                 });
                 // console.log(user)
             })
-            .catch(err => console.error(err))
+            .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage)
+                // ..
+            });
     }
 
     return (
@@ -134,6 +138,7 @@ const Register = () => {
 
                         />
                     </div>
+                    <p className='text-error font-medium text-md md:text=lg'> {error ? error : <></>} </p>
                     <div className="mt-6">
                         <button className="font-semibold w-full px-6 py-3 text-sm tracking-wide text-white dark:text-gray-800 capitalize transition-colors duration-300 transform bg-teal-500 rounded-md hover:bg-green-700 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                             Submit

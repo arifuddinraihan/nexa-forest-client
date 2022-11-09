@@ -20,7 +20,6 @@ const Login = () => {
         loginProvider(googleProvider)
             .then(res => {
                 const user = res.user
-                // console.log(user)
                 navigate(from, { replace: true })
                 toast.success('Successfully Logged in!', {
                     position: "top-right",
@@ -42,26 +41,26 @@ const Login = () => {
         const email = form.email?.value;
         const password = form.password?.value;
         signIn(email, password)
-        .then(res => {
-            const user = res.user
-            console.log(user)
-            navigate(from, { replace: true })
-            toast.success('Successfully Logged in!', {
-                position: "top-right",
-                autoClose: 500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
+            .then(res => {
+                const user = res.user
+                form.reset();
+                navigate(from, { replace: true })
+                toast.success('Successfully Logged in!', {
+                    position: "top-right",
+                    autoClose: 500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage)
+                // ..
             });
-        })
-        .catch((error) => {
-            const errorMessage = error.message;
-            setError(errorMessage)
-            // ..
-          });
     }
 
 
@@ -104,7 +103,7 @@ const Login = () => {
                                 <hr className="w-full dark:text-gray-400" />
                             </div>
                             <form onSubmit={handleLoginUser}
-                            noValidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+                                noValidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
                                 <div className="space-y-4">
                                     <div className="space-y-2">
                                         <label htmlFor="email" className="block text-sm">Email address</label>

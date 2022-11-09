@@ -3,12 +3,13 @@ import { ValidateContext } from '../../contexts/AuthProvider';
 import moment from 'moment/moment';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useTitle from '../../../hooks/useTitle';
 
 const ReviewForm = () => {
     const [rating, setRating] = useState(0)
     const { user } = useContext(ValidateContext)
     // console.log(user)
-
+    useTitle("Write Review")
 
     const { _id, title } = useLoaderData()
     const currentTime = moment().format('MMMM Do YYYY, h:mm:ss a')
@@ -58,6 +59,16 @@ const ReviewForm = () => {
             .catch(err => console.error(err))
 
     }
+
+    const ratingButtonHandle = event => {
+        const ratingCount = event.target.value
+        if (rating !== ratingCount && ratingCount === 0) {
+            setRating(ratingCount)
+        }
+        setRating(0)
+        event.reset()
+    }
+
     return (
         <div className='bg-white dark:bg-gray-900'>
             <div className='container mx-auto'>
@@ -84,13 +95,14 @@ const ReviewForm = () => {
                                 </div>
                                 <div>
                                     <h2 className='font-bold dark:text-emerald-600 mb-3'>Rating given: {rating}</h2>
-                                    <select onChange={event => setRating(event.target.value)}
-                                    className="select select-primary font-semibold dark:text-gray-800 max-w-xs">
+                                    <select onChange={ratingButtonHandle}
+                                        className="select select-primary font-semibold dark:text-gray-800 max-w-xs">
+                                        <option selected>0</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
-                                        <option selected>5</option>
+                                        <option>5</option>
                                     </select>
                                 </div>
                                 <div className='flex flex-col container mx-auto'>

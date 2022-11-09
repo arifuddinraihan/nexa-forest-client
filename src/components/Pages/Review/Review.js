@@ -1,11 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ValidateContext } from '../../contexts/AuthProvider';
+import ReviewCard from './ReviewCard';
 
 const Review = ({ serviceInfo }) => {
     const { _id } = serviceInfo
-    console.log(serviceInfo)
+    // console.log(serviceInfo)
     const { user } = useContext(ValidateContext)
+    const [reviewDetails, setReviewDetails] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews`)
+            .then(res => res.json())
+            .then(data => {
+                setReviewDetails(data)
+            })
+            .catch(err => console.error(err))
+    }, [])
     return (
         <section className="bg-white dark:bg-gray-900">
             <div className='container mx-auto'>
@@ -28,21 +38,10 @@ const Review = ({ serviceInfo }) => {
                                 </>
                         }
                     </div>
-                    <div className="mt-10 lg:mt-20">
-                        <img className="object-cover object-center rounded-lg" src="" alt="" />
-                        <div className="mt-8 lg:px-10 lg:mt-0">
-                            <h1 className="font-semibold text-gray-800 dark:text-white ">
-                                Help us improve our productivity
-                            </h1>
-                            <p className="mt-6 text-gray-500 dark:text-gray-400">
-                                “ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                                tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                                aperiam dolorum, obcaecati corrupti aspernatur a. ”
-                            </p>
-
-                            <h3 className="mt-6 text-blue-500">Ronik Ederson</h3>
-                            <p className="text-gray-600 dark:text-gray-300">Marketing Manager at Stech</p>
-                        </div>
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
+                        {
+                            reviewDetails.map(review => <ReviewCard key={review._id} review={review}></ReviewCard>)
+                        }
                     </div>
                 </div>
             </div>
