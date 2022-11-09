@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import ServiceItems from './ServiceItems';
 
-const Services = () => {
-    const [services, setServices] = useState([]);
-    useEffect(() => {
-        fetch(`http://localhost:5000/services`)
-            .then(res => res.json())
-            .then(data => setServices(data))
-            .catch(err => console.error(err))
+const AllServices = () => {
+    const [services , setServices] = useState([]);
+    useEffect( () => {
+        fetch(`http://localhost:5000/all-services`)
+        .then(res => res.json())
+        .then(data=> setServices(data))
+        .catch(err => console.error(err))
     }, [])
     return (
         <div className='bg-white dark:bg-gray-900'>
             <div className='min-h-screen'>
-                <div className='container mx-auto grid grid-cols-1 content-between'>
+                <div className='container mx-auto grid grid-cols-1'>
                     <div className='py-12 mb-6'>
                         <div className="text-center">
                             <h1 className="text-xl md:text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
@@ -30,15 +29,10 @@ const Services = () => {
                             services.map(service => <ServiceItems key={service._id} service={service}></ServiceItems>)
                         }
                     </div>
-                    <div className='justify-self-center my-8 md:my-16'>
-                        <Link to={'/all-services'}>
-                            <button className='btn btn-sm md:btn-md rounded-lg btn-secondary'>See All Service</button>
-                        </Link>
-                    </div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Services;
+export default AllServices;

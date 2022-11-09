@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Structure from "../Layout/Structure";
 import ErrorPage from "../Pages/Common/ErrorPage/ErrorPage";
 import Home from "../Pages/MainPage/Home/Home";
-import Services from "../Pages/MainPage/Services/Services";
+import AllServices from "../Pages/MainPage/Services/AllServices";
 import SingleService from "../Pages/SingleService/SingleService";
 
 const router = createBrowserRouter([
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
                 element : <Home></Home>
             },
             {
-                path : '/services',
-                element : <Services></Services>
+                path : '/all-services',
+                element : <AllServices></AllServices>
             },
             {
                 path : '/services/:id',
