@@ -3,11 +3,12 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ValidateContext } from '../../contexts/AuthProvider';
 import { toast } from 'react-toastify';
+import useTitle from '../../../hooks/useTitle';
 
 
 
 const Register = () => {
-
+    useTitle("Sign Up")
     const { makeNewUser } = useContext(ValidateContext)
 
     const handleSubmit = event => {

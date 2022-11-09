@@ -4,9 +4,10 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ValidateContext } from '../../contexts/AuthProvider';
 import { toast } from 'react-toastify';
+import useTitle from '../../../hooks/useTitle';
 
 const Login = () => {
-
+    useTitle("Log In")
     const [error, setError] = useState('')
     const { loginProvider, signIn } = useContext(ValidateContext)
     const navigate = useNavigate()

@@ -4,9 +4,11 @@ import Review from '../Review/Review';
 import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import useTitle from '../../../hooks/useTitle';
 
 const SingleService = () => {
     const { description, img, price, rating, title, _id } = useLoaderData()
+    useTitle(`Service- ${title}`)
     // console.log(title)
     return (
         <div>
