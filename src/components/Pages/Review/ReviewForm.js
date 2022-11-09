@@ -5,7 +5,11 @@ import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const ReviewForm = () => {
+    const [rating, setRating] = useState(0)
     const { user } = useContext(ValidateContext)
+    // console.log(user)
+
+
     const { _id, title } = useLoaderData()
     const currentTime = moment().format('MMMM Do YYYY, h:mm:ss a')
     const handleReviewSubmit = event => {
@@ -18,9 +22,11 @@ const ReviewForm = () => {
         const serviceReviewGiven = {
             service: _id,
             serviceName: title,
-            customer: user?.displayName,
+            client: user?.displayName,
+            clientImg: user?.photoURL,
             email,
             clientReview,
+            rating,
             reviewTime
         }
         console.log(serviceReviewGiven)
@@ -58,8 +64,8 @@ const ReviewForm = () => {
                 <div className='grid grid-cols-1 my-16 px-6 md:px-16 lg:px-24 xl:px-0'>
                     <div className='text-start md:text-center'>
                         <h2 className='text-xl md:text-4xl text-slate-700 dark:text-slate-100 font-bold'>Every Review Matters</h2>
-                        <p className='mt-6 text-md md:text-xl text-slate-700 dark:text-slate-100 font-semibold'>Please tell us and let others know about your experience over<br/>
-                        <span className='text-accent dark:text-emerald-500'>{title}</span> Service.</p>
+                        <p className='mt-6 text-md md:text-xl text-slate-700 dark:text-slate-100 font-semibold'>Please tell us and let others know about your experience over<br />
+                            <span className='text-accent dark:text-emerald-500'>{title}</span> Service.</p>
                     </div>
                     <div className='mt-8'>
                         <form className='container mx-auto' onSubmit={handleReviewSubmit}>
@@ -75,6 +81,17 @@ const ReviewForm = () => {
                                         className="px-4 py-2 mt-2 text-gray-700 bg-white border border-slate-900 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                                         defaultValue={currentTime}
                                         disabled />
+                                </div>
+                                <div>
+                                    <h2 className='font-bold dark:text-emerald-600 mb-3'>Rating given: {rating}</h2>
+                                    <select onChange={event => setRating(event.target.value)}
+                                    className="select select-primary font-semibold dark:text-gray-800 max-w-xs">
+                                        <option disabled>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option selected>5</option>
+                                    </select>
                                 </div>
                                 <div className='flex flex-col container mx-auto'>
                                     <label className="text-gray-700 dark:text-gray-200" htmlFor="messageConfirmation">Write Your Review</label>
