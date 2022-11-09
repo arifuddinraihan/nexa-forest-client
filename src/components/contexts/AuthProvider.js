@@ -35,6 +35,7 @@ const AuthProvider = ({ children }) => {
             if (user === null) {
                 setUser(currentUser)
             }
+            console.log("From user State")
             setLoading(false);
         });
 
