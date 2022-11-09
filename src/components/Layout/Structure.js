@@ -5,7 +5,7 @@ import Navbar from '../Pages/Common/Navbar/Navbar';
 
 const Structure = () => {
     return (
-        <div>
+        <div className='bg-white dark:bg-gray-900'>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
