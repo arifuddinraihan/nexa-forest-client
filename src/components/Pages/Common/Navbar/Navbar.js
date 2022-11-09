@@ -1,7 +1,24 @@
 import React, { useState } from 'react';
 import { GiForest } from "react-icons/gi";
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const menuItems =
+        <>
+            <li className='font-semibold'>
+                <NavLink to='/'
+                    className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
+                    Home
+                </NavLink>
+            </li>
+            <li className='font-semibold'>
+                <NavLink to='/services'
+                    className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
+                    Services
+                </NavLink>
+            </li>
+        </>
 
     return (
         <nav className='bg-base-100 transition-colors duration-300 transform dark:bg-white dark:hover:bg-gray-800 dark:hover:text-white shadow-xl sticky top-0 z-40'>
@@ -22,7 +39,7 @@ const Navbar = () => {
 
                             </label>
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 dark:bg-slate-800 rounded-box w-52 gap-2">
-
+                                {menuItems}
                             </ul>
                         </div>
                         <div
@@ -38,11 +55,12 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal p-0 gap-2">
+                            {menuItems}
                         </ul>
                     </div>
                     <div className="navbar-end">
                         <button className="btn btn-ghost btn-sm md:btn-md lg:btn-lg rounded-full">
-                            
+
                         </button>
                         <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle">
