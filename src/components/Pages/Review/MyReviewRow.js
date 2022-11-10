@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-const MyReviewRow = ({ review , handleDelete }) => {
-    
+const MyReviewRow = ({ review, handleDelete, handleReviewUpdate }) => {
+
     // console.log(review)
-    const { _id , serviceName, service, clientReview, rating, reviewTime } = review
+    const { _id, serviceName, service, clientReview, rating, reviewTime } = review
 
     const [serviceTaken, setServiceTaken] = useState([])
     useEffect(() => {
@@ -43,7 +43,7 @@ const MyReviewRow = ({ review , handleDelete }) => {
             </td>
             <td>{rating}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">Edit</button>
+                <label htmlFor="my-modal-3" className="btn btn-ghost btn-xs" onClick={() => handleReviewUpdate(_id)}>Edit</label>
             </th>
         </tr>
     );
