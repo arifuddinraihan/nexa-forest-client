@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 const MyReviewRow = ({ review , handleDelete }) => {
+    
     // console.log(review)
     const { _id , serviceName, service, clientReview, rating, reviewTime } = review
-
-
 
     const [serviceTaken, setServiceTaken] = useState([])
     useEffect(() => {

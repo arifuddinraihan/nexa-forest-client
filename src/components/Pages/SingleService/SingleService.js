@@ -20,7 +20,7 @@ const SingleService = () => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: "dark",
         })
     }
     // console.log(title)

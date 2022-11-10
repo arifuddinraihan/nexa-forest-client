@@ -13,7 +13,6 @@ const MyReview = () => {
             .then(data => setReviews(data))
             .catch(err => console.error(err))
     }, [user?.email])
-
     const handleDelete = id => {
         fetch(`http://localhost:5000/reviews/${id}`, {
             method: "DELETE"
@@ -48,9 +47,12 @@ const MyReview = () => {
                     </div>
                     <div className='mt-8'>
                         <div className='container mx-auto' >
+                            {reviews.length === 0
+                                ?
+                                <h2 className='text-error dark:text-red-500 text-center font-semibold my-4'>You have not write any reviews yet</h2>
+                                : <></>}
                             <div className="overflow-x-auto w-full">
                                 <table className="table w-full">
-
                                     <thead>
                                         <tr>
                                             <th>
@@ -73,7 +75,6 @@ const MyReview = () => {
                                                 ></MyReviewRow>)
                                         }
                                     </tbody>
-
                                 </table>
                             </div>
                         </div>
