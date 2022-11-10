@@ -6,7 +6,7 @@ import BlogCard from './BlogCard';
 const Blog = () => {
     useTitle("NexaForest- Blog")
     const blogs = useLoaderData()
-    console.log(blogs)
+    // console.log(blogs)
     return (
         <div className='bg-white dark:bg-gray-900'>
             <div className='min-h-screen'>

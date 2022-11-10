@@ -46,13 +46,13 @@ const Navbar = () => {
                 :
                 <>
                     <li className='font-semibold text-center'>
-                        <Link to='/login'
+                        <Link to={'/login'}
                             className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
                             Login
                         </Link>
                     </li>
                     <li className='font-semibold text-center'>
-                        <Link to='/sing-up'
+                        <Link to={'/sing-up'}
                             className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
                             Sign Up
                         </Link>

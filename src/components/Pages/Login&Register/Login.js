@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { GoogleAuthProvider } from 'firebase/auth';
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ValidateContext } from '../../contexts/AuthProvider';
 import { toast } from 'react-toastify';
 import useTitle from '../../../hooks/useTitle';
@@ -47,7 +47,6 @@ const Login = () => {
                 const currentUser = {
                     email: user.email
                 }
-                console.log(currentUser)
                 form.reset();
                 fetch('https://nexa-forest-server-side.vercel.app/jwt', {
                     method: "POST",
@@ -58,7 +57,7 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         localStorage.setItem('nexa-token', data.token)
                         navigate(from, { replace: true })
                         toast.success('Successfully Logged in!', {
