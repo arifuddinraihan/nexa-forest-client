@@ -178,7 +178,7 @@ const Navbar = () => {
                                                 </>
                                                 :
                                                 <>
-                                                    <FaUser></FaUser>
+                                                    <FaUser className='btn btn-outline p-1 btn-sm btn-circle btn-ghost text-center text-slate-800 dark:text-teal-500'></FaUser>
                                                 </>
                                         }
                                     </div>
