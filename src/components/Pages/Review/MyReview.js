@@ -20,7 +20,7 @@ const MyReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+
                 if (data.deletedCount > 0) {
                     const remaining = reviews.filter(rev => rev._id !== id)
                     setReviews(remaining)
@@ -40,14 +40,14 @@ const MyReview = () => {
 
     const handleReviewUpdate = id => {
         setReviewId(id)
-        console.log("Review Button Working", id)
+        // console.log("Review Button Working", id)
     }
     const reviewUpdateForm = (event) => {
         event.preventDefault();
         const form = event.target;
         const reviewRating = form.rating?.value;
         const updatedReviewText = form.message?.value;
-        console.log("Review Update form working", reviewRating, updatedReviewText)
+        // console.log("Review Update form working", reviewRating, updatedReviewText)
         fetch(`http://localhost:5000/reviews/${reviewId}`, {
             method: "PATCH",
             headers: {
