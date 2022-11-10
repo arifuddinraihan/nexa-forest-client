@@ -3,7 +3,7 @@ import React from 'react';
 const Subscription = () => {
     return (
         <div className='bg-white dark:bg-gray-900'>
-            <div className="container mx-auto my-8">
+            <div className="container mx-auto mb-24">
                 <div className="container px-6 py-8 mx-auto">
                     <div className="xl:items-center xl:-mx-8 xl:flex">
                         <div className="flex flex-col items-center xl:items-start xl:mx-8">
