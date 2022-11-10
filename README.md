@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Project Name : NexaForest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was build with React, Firebase, React router, Node, Express, MongoDB, Tailwind CSS > DaisyUI & MerakiUI [Press here to see the website](https://nexa-forest.web.app/).
 
-## Available Scripts
+### Project Over-view
 
-In the project directory, you can run:
+These are the platforms which has used to build this Web-site 
+->> [React.JS](https://reactjs.org/) ,
+ 
+->> [React Router](https://reactrouter.com/en/main) ,
+ 
+->> [Firebase](https://firebase.google.com/) ,
+ 
+->> [Vercel](https://vercel.com/docs/cli) ,
+ 
+->> [Node.js](https://nodejs.org/en/) ,
+ 
+->> [Express.js](https://expressjs.com/) ,
+ 
+->> [MongoDB](https://www.mongodb.com/) ,
+ 
+->> [Tailwind CSS](https://tailwindcss.com/docs/guides/create-react-app) ,
+ 
+->> [daisyUI](https://daisyui.com/docs/install/) ,
+ 
+->> [MerakiUI](https://merakiui.com/) ,
+ 
+->> [LottiePlayer React Component](https://github.com/LottieFiles/lottie-react) ,
+ 
+->> [React Toastify](https://www.npmjs.com/package/react-toastify) ,
+ 
+->> [React Icons](https://recharts.org/en-US/guide/installation)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Why And How (Tour of this Web-site)?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**1. Programming Hero (An online School of Programming world) has provided me an assignment to make an Service Provider Website.**
+ 
+**2. They Guided me through how the website should work.**
+ 
+**3. First, I have Created an environment for this `Single Page Application` Website by using- npm-React.**
+ 
+**4. Then I selected a theme from DaisyUI theme Generator, which is a Tailwind CSS based library.**
+ 
+**5. For Hero Section in Homepage I have used `LottieFiles Player` which you can see in a link provided above.**
+ 
+**6. By using Dynamic Route from `React Router` I have made this Application super-fast.**
+ 
+**7. `Toastify` is another beautiful React toast library used in this website, with this you can show next level notifications in your website- Alerts!**
+ 
+**8. I have made this website super responsive by the Power of `TailwindCSS` Framework and `DaisyUI` library.**
+ 
+**9. For showing `Dynamic link` and `pages` I have used `loader` & `useLoader` in components along with dynamic link format using `{params}` and `/:id`.**
+ 
+**10. And `Context API` has made it easier for me to pass the data down to the deepest child element, super duper helpful.**
 
-### `npm test`
+**11. On this project I have implemented `Google Firebase Authentication` this has made my website secure as I can monitor who has visited this website. Along with this website analytics can be used via this system.**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**12. For the services and details, I have hosted some real data and stored them in `MongoDB`, a free platform for hosting entry level data**
 
-### `npm run build`
+**13. Then I have added a `React Environment Variable` to secure the API key which i got from Firebase**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**14. Created a `Vercel Configuration file` to set the route data file at vercel website.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**15. I have added most beautiful and on-demand `DARK MODE` to this website, thanks a lot to `Tailwind.CSS` for such superb feature.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**16. Also I have added some conditional renders, Navbar user render, Email-Password wrong render.**
 
-### `npm run eject`
+**17. `Private Route` is a system from where if your not a valid user, you can not access that particular page, has been applied in this project.**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**18. [Swiper.js](https://swiperjs.com/) was fun when I applied automatic picture movement.**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**19. [react-photo-view](https://react-photo-view.vercel.app/en-US) another beautiful photo preview component make my service cover more playable.**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**20. I have also added service and reviews by descending order by using mongodb sort() method**

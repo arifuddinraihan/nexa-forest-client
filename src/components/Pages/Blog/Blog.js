@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
 import BlogCard from './BlogCard';
