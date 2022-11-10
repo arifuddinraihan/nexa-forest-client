@@ -32,7 +32,7 @@ const Cover = () => {
                     <SwiperSlide className=''>
                         <div className="relative w-full">
                             <div className='carousel-img'>
-                                <img src={img1} className="w-full h-96 object-cover  rounded-xl" />
+                                <img src={img1} className="w-full h-96 object-cover  rounded-xl" alt="NexaForest_cover"/>
                             </div>
                             <div className="absolute flex flex-col justify-start transform -translate-y-1/2 left-3 md:left-24 top-1/2">
                                 <h1 className='text-2xl md:text-4xl lg:text-5xl text-bold text-white'>
@@ -55,7 +55,7 @@ const Cover = () => {
                     <SwiperSlide className=''>
                         <div className="relative w-full">
                             <div className='carousel-img'>
-                                <img src={img2} className="w-full h-96 object-cover  rounded-xl" />
+                                <img src={img2} className="w-full h-96 object-cover  rounded-xl" alt="NexaForest_cover"/>
                             </div>
                             <div className="absolute flex flex-col justify-start transform -translate-y-1/2 left-3 md:left-24 top-1/2">
                                 <h1 className='text-2xl md:text-4xl lg:text-5xl text-bold text-white'>
@@ -78,7 +78,7 @@ const Cover = () => {
                     <SwiperSlide className=''>
                         <div className="relative w-full">
                             <div className='carousel-img'>
-                                <img src={img3} className="w-full h-96 object-cover  rounded-xl" />
+                                <img src={img3} className="w-full h-96 object-cover  rounded-xl" alt="NexaForest_cover"/>
                             </div>
                             <div className="absolute flex flex-col justify-start transform -translate-y-1/2 left-3 md:left-24 top-1/2">
                                 <h1 className='text-2xl md:text-4xl lg:text-5xl text-bold text-white'>
@@ -101,7 +101,7 @@ const Cover = () => {
                     <SwiperSlide className=''>
                         <div className="relative w-full">
                             <div className='carousel-img'>
-                                <img src={img4} className="w-full h-96 object-cover  rounded-xl" />
+                                <img src={img4} className="w-full h-96 object-cover  rounded-xl" alt="NexaForest_cover"/>
                             </div>
                             <div className="absolute flex flex-col justify-start transform -translate-y-1/2 left-3 md:left-24 top-1/2">
                                 <h1 className='text-2xl md:text-4xl lg:text-5xl text-bold text-white'>
