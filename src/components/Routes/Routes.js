@@ -24,7 +24,8 @@ const router = createBrowserRouter([
             },
             {
                 path : '/blog',
-                element : <Blog></Blog>
+                element : <Blog></Blog>,
+                loader: () => fetch(`https://nexa-forest-server-side.vercel.app/blogs`)
             },
             {
                 path : '/login',

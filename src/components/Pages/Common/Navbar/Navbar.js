@@ -82,13 +82,13 @@ const Navbar = () => {
             {
                 user ? <>
                     <li className='font-semibold'>
-                        <NavLink to='/'
+                        <NavLink to={'/'}
                             className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
                             Home
                         </NavLink>
                     </li>
                     <li className='font-semibold'>
-                        <NavLink to='/all-services'
+                        <NavLink to={'/all-services'}
                             className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
                             Services
                         </NavLink>
@@ -105,19 +105,31 @@ const Navbar = () => {
                             My Reviews
                         </NavLink>
                     </li>
+                    <li className='font-semibold'>
+                        <NavLink to={'/blog'}
+                            className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
+                            Blogs
+                        </NavLink>
+                    </li>
                 </>
                     :
                     <>
                         <li className='font-semibold'>
-                            <NavLink to='/'
+                            <NavLink to={'/'}
                                 className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
                                 Home
                             </NavLink>
                         </li>
                         <li className='font-semibold'>
-                            <NavLink to='/all-services'
+                            <NavLink to={'/all-services'}
                                 className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
                                 Services
+                            </NavLink>
+                        </li>
+                        <li className='font-semibold'>
+                            <NavLink to={'/blog'}
+                                className={({ isActive }) => isActive ? 'btn btn-sm md:btn-md btn-success' : 'btn btn-sm md:btn-md btn-ghost text-center'}>
+                                Blogs
                             </NavLink>
                         </li>
                     </>
