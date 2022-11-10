@@ -8,7 +8,7 @@ const Review = ({ serviceInfo }) => {
     const { user } = useContext(ValidateContext)
     const [reviewDetails, setReviewDetails] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://nexa-forest-server-side.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setReviewDetails(data)

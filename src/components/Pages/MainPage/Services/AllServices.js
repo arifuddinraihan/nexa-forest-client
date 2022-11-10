@@ -6,7 +6,7 @@ const AllServices = () => {
     useTitle("All Services")
     const [services , setServices] = useState([]);
     useEffect( () => {
-        fetch(`http://localhost:5000/all-services`)
+        fetch(`https://nexa-forest-server-side.vercel.app/all-services`)
         .then(res => res.json())
         .then(data=> setServices(data))
         .catch(err => console.error(err))

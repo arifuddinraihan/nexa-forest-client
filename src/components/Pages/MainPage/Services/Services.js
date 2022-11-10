@@ -5,7 +5,7 @@ import ServiceItems from './ServiceItems';
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`https://nexa-forest-server-side.vercel.app/services`)
             .then(res => res.json())
             .then(data => setServices(data))
             .catch(err => console.error(err))

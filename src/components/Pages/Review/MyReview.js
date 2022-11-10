@@ -9,7 +9,7 @@ const MyReview = () => {
     const [reviews, setReviews] = useState([])
     const [reviewId, setReviewId] = useState("")
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}` , {
+        fetch(`https://nexa-forest-server-side.vercel.app/reviews?email=${user?.email}` , {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('nexa-token')}`
             },
@@ -24,7 +24,7 @@ const MyReview = () => {
             .catch(err => console.error(err))
     }, [user?.email])
     const handleDelete = id => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://nexa-forest-server-side.vercel.app/reviews/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
@@ -57,7 +57,7 @@ const MyReview = () => {
         const reviewRating = form.rating?.value;
         const updatedReviewText = form.message?.value;
         // console.log("Review Update form working", reviewRating, updatedReviewText)
-        fetch(`http://localhost:5000/reviews/${reviewId}`, {
+        fetch(`https://nexa-forest-server-side.vercel.app/reviews/${reviewId}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

@@ -49,7 +49,7 @@ const Login = () => {
                 }
                 console.log(currentUser)
                 form.reset();
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://nexa-forest-server-side.vercel.app/jwt', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

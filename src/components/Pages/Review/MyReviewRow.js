@@ -7,7 +7,7 @@ const MyReviewRow = ({ review, handleDelete, handleReviewUpdate }) => {
 
     const [serviceTaken, setServiceTaken] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://nexa-forest-server-side.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setServiceTaken(data))
             .catch(err => console.error(err))

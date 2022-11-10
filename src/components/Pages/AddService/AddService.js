@@ -12,7 +12,7 @@ const AddService = () => {
         const serviceRating = form.rating?.value;
         const serviceDetails = form.details?.value;
 
-        fetch(`http://localhost:5000/services`, {
+        fetch(`https://nexa-forest-server-side.vercel.app/services`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"

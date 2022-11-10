@@ -32,7 +32,7 @@ const ReviewForm = () => {
         }
         // console.log(serviceReviewGiven)
 
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://nexa-forest-server-side.vercel.app/reviews`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"

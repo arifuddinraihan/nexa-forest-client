@@ -49,12 +49,12 @@ const router = createBrowserRouter([
             {
                 path : '/write-reviews/:id',
                 element : <PrivateRoutes><ReviewForm></ReviewForm></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({params}) => fetch(`https://nexa-forest-server-side.vercel.app/services/${params.id}`),
             },
             {
                 path : '/services/:id',
                 element : <SingleService></SingleService>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({params}) => fetch(`https://nexa-forest-server-side.vercel.app/services/${params.id}`),
             },
         ]
     }
