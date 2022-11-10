@@ -5,11 +5,24 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import useTitle from '../../../hooks/useTitle';
+import { toast } from 'react-toastify';
 
 const SingleService = () => {
     const serviceInfo = useLoaderData()
     const { description, img, price, rating, title, _id } = serviceInfo;
     useTitle(`Service- ${title}`)
+    const handleGetService = () => {
+        toast.success("We have received your request, Our consult will contact you son!", {
+            position: "top-center",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        })
+    }
     // console.log(title)
     return (
         <div>
@@ -37,7 +50,9 @@ const SingleService = () => {
                                 <div className="mt-4">
                                     <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-between gap-2">
                                         <div className="">
-                                            <button className='btn btn-success gap-4'>
+                                            <button
+                                                onClick={handleGetService}
+                                                className='btn btn-success gap-4'>
                                                 Get this Service  <BsFillArrowRightCircleFill></BsFillArrowRightCircleFill>
                                             </button>
                                         </div>
