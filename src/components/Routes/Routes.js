@@ -5,6 +5,7 @@ import Login from "../Pages/Login&Register/Login";
 import Register from "../Pages/Login&Register/Register";
 import Home from "../Pages/MainPage/Home/Home";
 import AllServices from "../Pages/MainPage/Services/AllServices";
+import MyReview from "../Pages/Review/MyReview";
 import ReviewForm from "../Pages/Review/ReviewForm";
 import SingleService from "../Pages/SingleService/SingleService";
 
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path : '/my-reviews',
-                element : <AllServices></AllServices>
+                element : <MyReview></MyReview>
             },
             {
                 path : '/write-reviews/:id',
