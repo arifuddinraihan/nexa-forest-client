@@ -12,7 +12,7 @@ const Services = () => {
     }, [])
     return (
         <div className='bg-white dark:bg-gray-900'>
-            <div className='min-h-screen'>
+            <div className=''>
                 <div className='container mx-auto grid grid-cols-1 content-between'>
                     <div className='py-12 mb-6'>
                         <div className="text-center">
