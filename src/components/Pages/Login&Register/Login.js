@@ -44,6 +44,10 @@ const Login = () => {
         signIn(email, password)
             .then(res => {
                 const user = res.user
+                const currentUser = {
+                    email: user.email
+                }
+                console.log(currentUser)
                 form.reset();
                 navigate(from, { replace: true })
                 toast.success('Successfully Logged in!', {

@@ -9,6 +9,7 @@ import AllServices from "../Pages/MainPage/Services/AllServices";
 import MyReview from "../Pages/Review/MyReview";
 import ReviewForm from "../Pages/Review/ReviewForm";
 import SingleService from "../Pages/SingleService/SingleService";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -34,15 +35,15 @@ const router = createBrowserRouter([
             },
             {
                 path : '/add-services',
-                element : <AddService></AddService>
+                element : <PrivateRoutes><AddService></AddService></PrivateRoutes>
             },
             {
                 path : '/my-reviews',
-                element : <MyReview></MyReview>
+                element : <PrivateRoutes><MyReview></MyReview></PrivateRoutes>
             },
             {
                 path : '/write-reviews/:id',
-                element : <ReviewForm></ReviewForm>,
+                element : <PrivateRoutes><ReviewForm></ReviewForm></PrivateRoutes>,
                 loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
             },
             {

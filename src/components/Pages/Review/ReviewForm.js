@@ -92,7 +92,7 @@ const ReviewForm = () => {
                                 <div>
                                     <h2 className='font-bold dark:text-emerald-600 mb-3'>Please Rate us</h2>
                                     <select onChange={ratingButtonHandle}
-                                        className="select select-primary font-semibold dark:text-gray-800 max-w-xs">
+                                        className="select select-primary font-semibold dark:text-gray-800 max-w-xs" required>
                                         <option value="0" selected>0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>

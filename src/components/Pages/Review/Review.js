@@ -5,7 +5,6 @@ import ReviewCard from './ReviewCard';
 
 const Review = ({ serviceInfo }) => {
     const { _id } = serviceInfo
-    console.log(serviceInfo)
     const { user } = useContext(ValidateContext)
     const [reviewDetails, setReviewDetails] = useState([])
     useEffect(() => {
@@ -24,19 +23,12 @@ const Review = ({ serviceInfo }) => {
                         <h1 className="text-xl md:text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
                             What our <span className="text-blue-500">customers</span> <br className='hidden md:block' /> are saying
                         </h1>
-                        {
-                            user ? <>
-                                <Link to={`/write-reviews/${_id}`}
-                                    className='btn btn-sm md:btn-lg btn-primary shadow-lg'>
-                                    Write A Review
-                                </Link>
-                            </>
-                                : <>
-                                    <Link to={'/login'} className='btn btn-sm md:btn-lg btn-primary shadow-lg'>
-                                        Login before writing a review
-                                    </Link>
-                                </>
-                        }
+                        <Link to={`/write-reviews/${_id}`}
+                            className='btn btn-sm md:btn-lg btn-primary shadow-lg'>
+                            {
+                                user ? "Write a review" : "Login before writing a review"
+                            }
+                        </Link>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
                         {
