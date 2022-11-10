@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ReviewCard = ({ review }) => {
-    // console.log(review)
     const { client, clientImg, clientReview, rating, reviewTime, serviceName } = review
     return (
         <div className="w-full max-w-md px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">

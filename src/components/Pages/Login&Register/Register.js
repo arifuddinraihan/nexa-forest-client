@@ -21,7 +21,7 @@ const Register = () => {
         const telephone = form.phone?.value;
         const email = form.email?.value;
         const password = form.password?.value;
-        // console.log("event btn working", email, password, fullName, telephone)
+
         makeNewUser(email, password)
             .then(result => {
                 const user = result.user;
@@ -37,12 +37,11 @@ const Register = () => {
                     progress: undefined,
                     theme: "light",
                 });
-                // console.log(user)
+                setError('')
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 setError(errorMessage)
-                // ..
             });
     }
 

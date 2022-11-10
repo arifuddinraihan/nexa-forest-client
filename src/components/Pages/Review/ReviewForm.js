@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import useTitle from '../../../hooks/useTitle';
 
 const ReviewForm = () => {
-    const [rating, setRating] = useState(0)
+    const [rating, setRating] = useState(null)
     const { user } = useContext(ValidateContext)
     // console.log(user)
     useTitle("Write Review")
@@ -62,11 +62,7 @@ const ReviewForm = () => {
 
     const ratingButtonHandle = event => {
         const ratingCount = event.target.value
-        if (rating !== ratingCount && ratingCount === 0) {
-            setRating(ratingCount)
-        }
-        setRating(0)
-        event.reset()
+        setRating(ratingCount)
     }
 
     return (
@@ -94,15 +90,15 @@ const ReviewForm = () => {
                                         disabled />
                                 </div>
                                 <div>
-                                    <h2 className='font-bold dark:text-emerald-600 mb-3'>Rating given: {rating}</h2>
+                                    <h2 className='font-bold dark:text-emerald-600 mb-3'>Please Rate us</h2>
                                     <select onChange={ratingButtonHandle}
                                         className="select select-primary font-semibold dark:text-gray-800 max-w-xs">
-                                        <option selected>0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                                 <div className='flex flex-col container mx-auto'>

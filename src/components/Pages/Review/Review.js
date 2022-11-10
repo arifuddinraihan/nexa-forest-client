@@ -5,7 +5,6 @@ import ReviewCard from './ReviewCard';
 
 const Review = ({ serviceInfo }) => {
     const { _id } = serviceInfo
-    // console.log(serviceInfo)
     const { user } = useContext(ValidateContext)
     const [reviewDetails, setReviewDetails] = useState([])
     useEffect(() => {
