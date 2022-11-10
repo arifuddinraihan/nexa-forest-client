@@ -43,6 +43,7 @@ const AuthProvider = ({ children }) => {
 
     const logOut = () => {
         setLoading(true);
+        localStorage.removeItem('nexa-token');
         return signOut(auth);
     }
 

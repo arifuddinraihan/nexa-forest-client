@@ -9,7 +9,7 @@ import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
     useTitle("Sign Up")
-    const { makeNewUser, updateUserProfile } = useContext(ValidateContext)
+    const { makeNewUser, updateUserProfile, logOut } = useContext(ValidateContext)
     const [error, setError] = useState('')
     const handleSubmit = event => {
         event.preventDefault();
@@ -27,9 +27,10 @@ const Register = () => {
                 const user = result.user;
                 updateUserProfile(fullName, photo)
                 form.reset();
-                toast.success('You have registered successfully', {
+                logOut()
+                toast.success('You have registered successfully, Please Login now!', {
                     position: "top-right",
-                    autoClose: 500,
+                    autoClose: 900,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,

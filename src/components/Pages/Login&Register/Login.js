@@ -49,17 +49,30 @@ const Login = () => {
                 }
                 console.log(currentUser)
                 form.reset();
-                navigate(from, { replace: true })
-                toast.success('Successfully Logged in!', {
-                    position: "top-right",
-                    autoClose: 500,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
+                fetch('http://localhost:5000/jwt', {
+                    method: "POST",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('nexa-token', data.token)
+                        navigate(from, { replace: true })
+                        toast.success('Successfully Logged in!', {
+                            position: "top-right",
+                            autoClose: 800,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                        });
+                    })
+                    .catch(err => console.error(err))
                 setError('')
             })
             .catch((error) => {
