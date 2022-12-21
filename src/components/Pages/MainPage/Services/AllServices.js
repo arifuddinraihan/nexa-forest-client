@@ -1,16 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useTitle from '../../../../hooks/useTitle';
 import ServiceItems from './ServiceItems';
+import { useQuery } from '@tanstack/react-query';
+import PrimarySpinner from '../../../assets/Spinners/PrimarySpinner';
 
 const AllServices = () => {
     useTitle("All Services")
-    const [services , setServices] = useState([]);
-    useEffect( () => {
-        fetch(`https://nexa-forest-server-side.vercel.app/all-services`)
-        .then(res => res.json())
-        .then(data=> setServices(data))
-        .catch(err => console.error(err))
-    }, [])
+    // const [services , setServices] = useState([]);
+    // useEffect( () => {
+    //     fetch(`https://nexa-forest-server-side.vercel.app/all-services`)
+    //     .then(res => res.json())
+    //     .then(data=> setServices(data))
+    //     .catch(err => console.error(err))
+    // }, [])
+    const url = `https://nexa-forest-server-side.vercel.app/all-services`;
+    const { data: services = [], isLoading } = useQuery({
+        queryKey: ['all-services'],
+        queryFn: async () => {
+            const res = await fetch(url, {
+                headers: {
+                    "content-type": "application/json"
+                }
+            });
+            const data = await res.json();
+            return data;
+        }
+    })
+    if (isLoading) {
+        return <PrimarySpinner></PrimarySpinner>
+    }
+
     return (
         <div className='bg-white dark:bg-gray-900'>
             <div className='min-h-screen'>
