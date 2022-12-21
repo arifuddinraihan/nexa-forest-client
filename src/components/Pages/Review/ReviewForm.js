@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { ValidateContext } from '../../contexts/AuthProvider';
 import moment from 'moment/moment';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useTitle from '../../../hooks/useTitle';
 
@@ -13,6 +13,9 @@ const ReviewForm = () => {
 
     const { _id, title } = useLoaderData()
     const currentTime = moment().format('MMMM Do YYYY, h:mm:ss a')
+    const navigate = useNavigate()
+    const reviewRoute = "/my-reviews"
+
     const handleReviewSubmit = event => {
         event.preventDefault()
         const form = event.target;
@@ -44,6 +47,8 @@ const ReviewForm = () => {
                 // console.log(data)
                 if (data.acknowledged) {
                     form.reset()
+                    navigate(reviewRoute, { replace: true })
+                    window.location.reload(true)
                     toast.success('your Review has added!', {
                         position: "top-right",
                         autoClose: 500,
