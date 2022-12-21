@@ -13,7 +13,7 @@ const Login = () => {
     const { loginProvider, signIn, forgetPassToEmail } = useContext(ValidateContext)
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location.state?.from?.pathname
+    const from = location.state?.from?.pathname || '/'
 
     const googleProvider = new GoogleAuthProvider()
     const googleLoginHandle = (event) => {

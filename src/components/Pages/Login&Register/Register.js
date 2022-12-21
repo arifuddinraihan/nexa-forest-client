@@ -1,16 +1,18 @@
 import { Player } from '@lottiefiles/react-lottie-player';
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ValidateContext } from '../../contexts/AuthProvider';
 import { toast } from 'react-toastify';
 import useTitle from '../../../hooks/useTitle';
-
-
+import PrimarySpinner from '../../assets/Spinners/PrimarySpinner';
 
 const Register = () => {
     useTitle("Sign Up")
-    const { makeNewUser, updateUserProfile, logOut } = useContext(ValidateContext)
+    const { makeNewUser, updateUserProfile, loading } = useContext(ValidateContext)
     const [error, setError] = useState('')
+    const navigate = useNavigate()
+    const homeRoute = '/'
+
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -25,27 +27,39 @@ const Register = () => {
         makeNewUser(email, password)
             .then(result => {
                 const user = result.user;
-                updateUserProfile(fullName, photo)
-                form.reset();
-                logOut()
-                toast.success('You have registered successfully, Please Login now!', {
-                    position: "top-right",
-                    autoClose: 900,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
-                setError('')
+                const displayName = fullName;
+                const photoURL = photo
+                const userInfo = {
+                    displayName,
+                    photoURL
+                }
+                updateUserProfile(userInfo)
+                    .then(() => {
+                        form.reset();
+                        navigate(homeRoute, { replace: true })
+                        window.location.reload(true)
+                        toast.success('Your account created successfully!', {
+                            position: "top-right",
+                            autoClose: 900,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "light",
+                        });
+                        setError('')
+                    })
+                    .catch((err) => console.error(err))
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 setError(errorMessage)
             });
     }
-
+    if (loading) {
+        return <PrimarySpinner></PrimarySpinner>
+    }
     return (
         <div className='bg-white dark:bg-gray-900'>
             <div className='container flex items-center justify-center py-4 px-6 mx-auto'>

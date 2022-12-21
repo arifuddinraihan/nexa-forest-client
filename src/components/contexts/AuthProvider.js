@@ -25,15 +25,9 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const updateUserProfile = (name, img) => {
-        updateProfile(auth.currentUser, {
-            displayName: name, photoURL: img
-        }).then(() => {
-            setLoading(true);
-        }).catch((err) => {
-            console.error(err)
-        });
-        setLoading(false);
+    const updateUserProfile = (userInfo) => {
+        setLoading(true);
+        return updateProfile(auth.currentUser, userInfo);
     }
 
     const forgetPassToEmail = (email) => {
